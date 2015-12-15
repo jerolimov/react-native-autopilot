@@ -1,11 +1,19 @@
 # react-native-autopilot [![Build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url] [![Dependency Status][dependency-image]][dependency-url]
 
-> TODO
+> Automatically push and pop navigator routes/scenes/screens if the navigator props was changed.
 
 ### Features
 
-* Automatically pushs and pops navigator routes/scenes/screens if the navigator props was changed.
-  This simplifies the usage of the react-native Navigator with redux!
+Work in process:
+
+* Simplifies the [react-native](https://facebook.github.io/react-native/)
+  [Navigator](https://facebook.github.io/react-native/docs/navigator.html),
+  [NavigatorIOS](https://facebook.github.io/react-native/docs/navigatorios.html) and
+  [ExNavigator](https://github.com/exponentjs/ex-navigator/) usage,
+  especially if you use a flux architecture, for example with
+  [redux](https://github.com/rackt/redux),
+  [react-redux](https://github.com/rackt/react-redux) and
+  [redux-persist](https://github.com/rt2zz/redux-persist).
 * Loading View
 
 ### Installation
