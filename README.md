@@ -4,8 +4,9 @@
 
 ### Features
 
-* Deklerative routen mit automatischen updates
-* Loading View  
+* Automatically pushs and pops navigator routes/scenes/screens if the navigator props was changed.
+  This simplifies the usage of the react-native Navigator with redux!
+* Loading View
 
 ### Installation
 
@@ -17,25 +18,9 @@ npm install --save react-native-autopilot
 
 TODO
 
-### Navigator API
+### Navigator APIs
 
-From (Navigator.js)[https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js]
-
-- `jumpBack()` - Jump backward without unmounting the current scene
-- `jumpForward()` - Jump forward to the next scene in the route stack
-- `jumpTo(route)` - Transition to an existing scene without unmounting
-- `push(route)` - Navigate forward to a new scene, squashing any scenes
-  that you could `jumpForward` to
-- `pop()` - Transition back and unmount the current scene
-- `replace(route)` - Replace the current scene with a new route
-- `replaceAtIndex(route, index)` - Replace a scene as specified by an index
-- `replacePrevious(route)` - Replace the previous scene
-- `immediatelyResetRouteStack(routeStack)` - Reset every scene with an
-  array of routes
-- `popToRoute(route)` - Pop to a particular scene, as specified by its
-  route. All scenes after it will be unmounted
-- `popToTop()` - Pop to the first scene in the stack, unmounting every
-  other scene
+See [Navigator.js](https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js)
 
 ### Credits
 
