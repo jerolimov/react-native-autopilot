@@ -1,0 +1,42 @@
+{
+  "name": "react-native-autopilot",
+  "version": "0.0.1",
+  "description": "TODO",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint lib tests",
+    "test": "mocha --recursive",
+    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --recursive"
+  },
+  "author": "Christoph Jerolimov",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jerolimov/react-native-autopilot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jerolimov/react-native-autopilot/issues"
+  },
+  "homepage": "https://github.com/jerolimov/react-native-autopilot#readme",
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "navigator",
+    "navigatorios",
+    "exnavigator",
+    "android",
+    "ios"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coveralls": "^2.11.4",
+    "eslint": "^1.10.3",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.12"
+  }
+}
