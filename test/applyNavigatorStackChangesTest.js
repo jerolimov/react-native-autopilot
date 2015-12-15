@@ -10,6 +10,7 @@ describe('applyNavigatorStackChanges', function() {
 	var routeA = 'routeA';
 	var routeB = 'routeB';
 	var routeC = 'routeC';
+	var routeD = 'routeD';
 	var navigatorMock;
 
 	beforeEach(function() {
@@ -44,6 +45,14 @@ describe('applyNavigatorStackChanges', function() {
 		}, /Error: Navigator is not defined in applyNavigatorStackChanges!/);
 	});
 
+	it('must not call any navigator method if route stack is equal (===)', function() {
+		var prevRoutes = [routeA];
+		var nextRoutes = prevRoutes;
+		var expectedCallHistory = [];
+		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
+	});
+
 	it('must not call any navigator method if nothing changes', function() {
 		var prevRoutes = [routeA];
 		var nextRoutes = [routeA];
@@ -60,10 +69,34 @@ describe('applyNavigatorStackChanges', function() {
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
+	it('should replace and push a route if one was added', function() {
+		var prevRoutes = [routeA, routeB];
+		var nextRoutes = [routeA, routeC, routeD];
+		var expectedCallHistory = [ 'replaceAtIndex routeC 1', 'push routeD' ];
+		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
+	});
+
 	it('should pop a route if one was removed', function() {
 		var prevRoutes = [routeA, routeB];
 		var nextRoutes = [routeA];
 		var expectedCallHistory = [ 'pop' ];
+		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
+	});
+
+	it('should replace and pop a route if one was removed', function() {
+		var prevRoutes = [routeA, routeB, routeC];
+		var nextRoutes = [routeA, routeD];
+		var expectedCallHistory = [ 'replaceAtIndex routeD 1', 'pop' ];
+		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
+	});
+
+	it('should replace a route if all other are keeped', function() {
+		var prevRoutes = [routeA, routeB, routeC];
+		var nextRoutes = [routeA, routeD, routeC];
+		var expectedCallHistory = [ 'replaceAtIndex routeD 1' ];
 		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
@@ -81,6 +114,17 @@ describe('applyNavigatorStackChanges', function() {
 		nextRoutes = [routeC];
 		expectedCallHistory = [ 'immediatelyResetRouteStack routeC' ];
 		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
+	});
+
+	it('should replace the route stack if optional compareRoute function returns false', function() {
+		var prevRoutes = [routeA];
+		var nextRoutes = [routeA];
+		var compareRoute = function() {
+			return false;
+		};
+		var expectedCallHistory = [ 'immediatelyResetRouteStack routeA' ];
+		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock, compareRoute);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 });
