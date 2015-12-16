@@ -28,7 +28,8 @@ TODO
 
 ### Navigator APIs
 
-See [Navigator.js](https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js)
+* Original [Navigator](https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js)
+* Original [NavigatorIOS](https://github.com/facebook/react-native/blob/master/Libraries/Components/Navigation/NavigatorIOS.ios.js)
 
 ### Credits
 

@@ -21,22 +21,22 @@ describe('applyNavigatorStackChanges', function() {
 		assert.equal('function', typeof applyNavigatorStackChanges);
 	});
 
-	it('should throw an error if prevStack is null or empty', function() {
+	it('should throw an error if prev route stack is null or empty', function() {
 		assert.throws(function() {
 			applyNavigatorStackChanges();
-		}, /Error: Prev stack must be an array with at least one entry!/);
+		}, /Error: Prev route stack must be an array with at least one entry!/);
 		assert.throws(function() {
 			applyNavigatorStackChanges([]);
-		}, /Error: Prev stack must be an array with at least one entry!/);
+		}, /Error: Prev route stack must be an array with at least one entry!/);
 	});
 
-	it('should throw an error if nextStack is null or empty', function() {
+	it('should throw an error if next route stack is null or empty', function() {
 		assert.throws(function() {
 			applyNavigatorStackChanges([ routeA ]);
-		}, /Error: Next stack must be an array with at least one entry!/);
+		}, /Error: Next route stack must be an array with at least one entry!/);
 		assert.throws(function() {
 			applyNavigatorStackChanges([ routeA ], []);
-		}, /Error: Next stack must be an array with at least one entry!/);
+		}, /Error: Next route stack must be an array with at least one entry!/);
 	});
 
 	it('should throw an error if navigator is null', function() {
