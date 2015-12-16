@@ -2,11 +2,11 @@
 
 var assert = require('assert');
 
-var applyNavigatorStackChanges = require('../lib/applyNavigatorStackChanges');
+var applyNavigatorChanges = require('../lib/applyNavigatorChanges');
 
 var NavigatorMock = require('./NavigatorMock');
 
-describe('applyNavigatorStackChanges', function() {
+describe('applyNavigatorChanges', function() {
 	var routeA = 'routeA';
 	var routeB = 'routeB';
 	var routeC = 'routeC';
@@ -18,38 +18,38 @@ describe('applyNavigatorStackChanges', function() {
 	});
 
 	it('should be a function', function() {
-		assert.equal('function', typeof applyNavigatorStackChanges);
+		assert.equal('function', typeof applyNavigatorChanges);
 	});
 
 	it('should throw an error if prev route stack is null or empty', function() {
 		assert.throws(function() {
-			applyNavigatorStackChanges();
+			applyNavigatorChanges();
 		}, /Error: Prev route stack must be an array with at least one entry!/);
 		assert.throws(function() {
-			applyNavigatorStackChanges([]);
+			applyNavigatorChanges([]);
 		}, /Error: Prev route stack must be an array with at least one entry!/);
 	});
 
 	it('should throw an error if next route stack is null or empty', function() {
 		assert.throws(function() {
-			applyNavigatorStackChanges([ routeA ]);
+			applyNavigatorChanges([ routeA ]);
 		}, /Error: Next route stack must be an array with at least one entry!/);
 		assert.throws(function() {
-			applyNavigatorStackChanges([ routeA ], []);
+			applyNavigatorChanges([ routeA ], []);
 		}, /Error: Next route stack must be an array with at least one entry!/);
 	});
 
 	it('should throw an error if navigator is null', function() {
 		assert.throws(function() {
-			applyNavigatorStackChanges([ routeA ], [ routeB ], null);
-		}, /Error: Navigator is not defined in applyNavigatorStackChanges!/);
+			applyNavigatorChanges([ routeA ], [ routeB ], null);
+		}, /Error: Navigator must be defined!/);
 	});
 
 	it('must not call any navigator method if route stack is equal (===)', function() {
 		var prevRoutes = [routeA];
 		var nextRoutes = prevRoutes;
 		var expectedCallHistory = [];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -57,7 +57,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA];
 		var nextRoutes = [routeA];
 		var expectedCallHistory = [];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -65,7 +65,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA];
 		var nextRoutes = [routeA, routeB];
 		var expectedCallHistory = [ 'push routeB' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -73,7 +73,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA, routeB];
 		var nextRoutes = [routeA, routeC, routeD];
 		var expectedCallHistory = [ 'replaceAtIndex routeC 1', 'push routeD' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -81,7 +81,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA, routeB];
 		var nextRoutes = [routeA];
 		var expectedCallHistory = [ 'pop' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -89,7 +89,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA, routeB, routeC];
 		var nextRoutes = [routeA, routeD];
 		var expectedCallHistory = [ 'replaceAtIndex routeD 1', 'pop' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -97,7 +97,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA, routeB, routeC];
 		var nextRoutes = [routeA, routeD, routeC];
 		var expectedCallHistory = [ 'replaceAtIndex routeD 1' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -105,7 +105,7 @@ describe('applyNavigatorStackChanges', function() {
 		var prevRoutes = [routeA];
 		var nextRoutes = [routeB, routeC];
 		var expectedCallHistory = [ 'immediatelyResetRouteStack routeB,routeC' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 
 		navigatorMock.resetMock();
@@ -113,7 +113,7 @@ describe('applyNavigatorStackChanges', function() {
 		prevRoutes = [routeA, routeB];
 		nextRoutes = [routeC];
 		expectedCallHistory = [ 'immediatelyResetRouteStack routeC' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 
@@ -124,7 +124,7 @@ describe('applyNavigatorStackChanges', function() {
 			return false;
 		};
 		var expectedCallHistory = [ 'immediatelyResetRouteStack routeA' ];
-		applyNavigatorStackChanges(prevRoutes, nextRoutes, navigatorMock, compareRoute);
+		applyNavigatorChanges(prevRoutes, nextRoutes, navigatorMock, compareRoute);
 		assert.deepEqual(navigatorMock.callHistory, expectedCallHistory);
 	});
 });
