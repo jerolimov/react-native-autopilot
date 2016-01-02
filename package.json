@@ -1,7 +1,7 @@
 {
   "name": "react-native-autopilot",
   "version": "0.0.1",
-  "description": "TODO",
+  "description": "Automatically push and pop navigator routes/scenes/screens if the navigator props was changed.",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint lib test",
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/jerolimov/react-native-autopilot#readme",
   "keywords": [
-    "react",
     "react-native",
     "react-component",
     "navigator",
