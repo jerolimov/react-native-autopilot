@@ -1,8 +1,8 @@
-# react-native autopilot (for the navigators)
-
-[![Build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url] [![Dependency Status][dependency-image]][dependency-url]
+# react-native-autopilot (for the navigators)
 
 > Automatically push and pop navigator routes/scenes/screens if the navigator props was changed.
+
+[![Build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url] [![Dependency Status][dependency-image]][dependency-url]
 
 ### Features
 
