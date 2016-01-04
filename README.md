@@ -1,45 +1,53 @@
-# react-native-autopilot (for the navigators)
+# react-native-autopilot
 
 > Automatically push and pop navigator routes/scenes/screens if the navigator props was changed.
 
 [![Build status][travis-image]][travis-url] [![Test coverage][coveralls-image]][coveralls-url] [![Dependency Status][dependency-image]][dependency-url]
 
-### Features
+This project simplifies the usage of the Navigator concept in
+[react-native](https://facebook.github.io/react-native/),
+especially if you use a "flux-like" state driven props-architecture,
+for example if you use [redux](https://github.com/rackt/redux) /
+[react-redux](https://github.com/rackt/react-redux).
 
-Work in process:
+It reverse the abstraction of the original Navigator and NavigatorIOS as well
+as the commonly used [ExNavigator](https://github.com/exponentjs/ex-navigator/).
 
-* Simplifies the [react-native](https://facebook.github.io/react-native/)
-  [Navigator](https://facebook.github.io/react-native/docs/navigator.html),
-  [NavigatorIOS](https://facebook.github.io/react-native/docs/navigatorios.html) and
-  [ExNavigator](https://github.com/exponentjs/ex-navigator/) usage,
-  especially if you use a flux architecture, for example with
-  [redux](https://github.com/rackt/redux),
-  [react-redux](https://github.com/rackt/react-redux) and
-  [redux-persist](https://github.com/rt2zz/redux-persist).
-* Loading View
+Works fine together if you want serialize and persist your navigation state,
+for example with [redux-persist](https://github.com/rt2zz/redux-persist).
 
-### Installation
+## Getting started
 
 ```bash
 npm install --save react-native-autopilot
 ```
 
-### Doc
+## Navigator APIs
 
-TODO
+## Alternatives
 
-### Navigator APIs
+* Pure [Navigator](https://facebook.github.io/react-native/docs/navigator.html),
+  ([Navigator.js](https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js))
+* Pure [NavigatorIOS](https://facebook.github.io/react-native/docs/navigatorios.html),
+  ([NavigatorIOS.ios.js](https://github.com/facebook/react-native/blob/master/Libraries/Components/Navigation/NavigatorIOS.ios.js))
+* Pure [ExNavigator](https://github.com/exponentjs/ex-navigator/),
+  ([ExNavigator.js](https://github.com/exponentjs/ex-navigator/blob/master/ExNavigator.js),
+  [ExRoute.js](https://github.com/exponentjs/ex-navigator/blob/master/ExRoute.js))
+* [react-native-router-redux](https://github.com/Qwikly/react-native-router-redux)
 
-* Original [Navigator](https://github.com/facebook/react-native/blob/master/Libraries/CustomComponents/Navigator/Navigator.js)
-* Original [NavigatorIOS](https://github.com/facebook/react-native/blob/master/Libraries/Components/Navigation/NavigatorIOS.ios.js)
+## Author
 
-### Credits
+Christoph Jerolimov, [@jerolimov](https://twitter.com/jerolimov)
 
-TODO
+## Credits
 
-### Alternatives
+Ideas, discussions and contributions are welcome: Just
+[open a new issue](https://github.com/jerolimov/react-native-autopilot/issues/new)
 
-TODO
+## License
+
+This project is released under the MIT License.
+See the LICENSE file for further details.
 
 [travis-image]: https://img.shields.io/travis/jerolimov/react-native-autopilot/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/jerolimov/react-native-autopilot
