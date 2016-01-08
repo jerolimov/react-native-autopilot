@@ -22,8 +22,6 @@ for example with [redux-persist](https://github.com/rt2zz/redux-persist).
 npm install --save react-native-autopilot
 ```
 
-## Navigator APIs
-
 ## Alternatives
 
 * Pure [Navigator](https://facebook.github.io/react-native/docs/navigator.html),
