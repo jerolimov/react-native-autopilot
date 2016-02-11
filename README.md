@@ -33,23 +33,19 @@ npm install --save react-native-autopilot
   [ExRoute.js](https://github.com/exponentjs/ex-navigator/blob/master/ExRoute.js))
 * [react-native-router-redux](https://github.com/Qwikly/react-native-router-redux)
 
-## Author
-
-Christoph Jerolimov, [@jerolimov](https://twitter.com/jerolimov)
-
 ## Credits
 
 Ideas, discussions and contributions are welcome: Just
-[open a new issue](https://github.com/jerolimov/react-native-autopilot/issues/new)
+[open a new issue](https://github.com/bringnow/react-native-autopilot/issues/new)
 
 ## License
 
 This project is released under the MIT License.
 See the LICENSE file for further details.
 
-[travis-image]: https://img.shields.io/travis/jerolimov/react-native-autopilot/master.svg?style=flat-square
-[travis-url]: https://travis-ci.org/jerolimov/react-native-autopilot
-[coveralls-image]: https://img.shields.io/coveralls/jerolimov/react-native-autopilot/master.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/jerolimov/react-native-autopilot
-[dependency-image]: http://img.shields.io/david/jerolimov/react-native-autopilot.svg?style=flat-square
-[dependency-url]: https://david-dm.org/jerolimov/react-native-autopilot
+[travis-image]: https://img.shields.io/travis/bringnow/react-native-autopilot/master.svg?style=flat-square
+[travis-url]: https://travis-ci.org/bringnow/react-native-autopilot
+[coveralls-image]: https://img.shields.io/coveralls/bringnow/react-native-autopilot/master.svg?style=flat-square
+[coveralls-url]: https://coveralls.io/r/bringnow/react-native-autopilot
+[dependency-image]: http://img.shields.io/david/bringnow/react-native-autopilot.svg?style=flat-square
+[dependency-url]: https://david-dm.org/bringnow/react-native-autopilot

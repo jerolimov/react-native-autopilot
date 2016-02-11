@@ -12,12 +12,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jerolimov/react-native-autopilot.git"
+    "url": "git+https://github.com/bringnow/react-native-autopilot.git"
   },
   "bugs": {
-    "url": "https://github.com/jerolimov/react-native-autopilot/issues"
+    "url": "https://github.com/bringnow/react-native-autopilot/issues"
   },
-  "homepage": "https://github.com/jerolimov/react-native-autopilot#readme",
+  "homepage": "https://github.com/bringnow/react-native-autopilot#readme",
   "keywords": [
     "react-native",
     "react-component",
