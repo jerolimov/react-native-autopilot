@@ -34,8 +34,5 @@
     "eslint": "^1.10.3",
     "istanbul": "^0.4.1",
     "mocha": "^2.3.4"
-  },
-  "peerDependencies": {
-    "react-native": ">=0.12"
   }
 }
