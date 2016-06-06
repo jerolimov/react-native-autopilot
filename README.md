@@ -10,7 +10,7 @@ especially if you use a "flux-like" state driven props-architecture,
 for example if you use [redux](https://github.com/rackt/redux) /
 [react-redux](https://github.com/rackt/react-redux).
 
-It reverse the abstraction of the original Navigator and NavigatorIOS as well
+It reverses the abstraction of the original Navigator and NavigatorIOS as well
 as the commonly used [ExNavigator](https://github.com/exponentjs/ex-navigator/).
 
 Works fine together if you want serialize and persist your navigation state,
