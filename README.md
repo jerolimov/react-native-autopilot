@@ -32,6 +32,7 @@ npm install --save react-native-autopilot
   ([ExNavigator.js](https://github.com/exponentjs/ex-navigator/blob/master/ExNavigator.js),
   [ExRoute.js](https://github.com/exponentjs/ex-navigator/blob/master/ExRoute.js))
 * [react-native-router-redux](https://github.com/Qwikly/react-native-router-redux)
+* [react-native-router-flux](https://github.com/aksonov/react-native-router-flux)
 
 ## Credits
 
