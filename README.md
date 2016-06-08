@@ -22,6 +22,10 @@ for example with [redux-persist](https://github.com/rt2zz/redux-persist).
 npm install --save react-native-autopilot
 ```
 
+## Examples
+
+For getting an idea on how to use this library, please check out the [demo project](https://github.com/bringnow/react-native-autopilot-example).
+
 ## Alternatives
 
 * Pure [Navigator](https://facebook.github.io/react-native/docs/navigator.html),
