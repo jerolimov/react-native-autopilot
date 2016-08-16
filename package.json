@@ -1,6 +1,6 @@
 {
   "name": "react-native-autopilot",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Automatically push and pop navigator routes/scenes/screens if the navigator props was changed.",
   "main": "lib/index.js",
   "scripts": {
