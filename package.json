@@ -28,8 +28,8 @@
     "exnavigator"
   ],
   "peerDependencies": {
-    "react": "^15.2.1",
-    "react-native": "^0.31.0"
+    "react": ">=15.2",
+    "react-native": ">=0.30"
   },
   "devDependencies": {
     "babel-eslint": "^6.0.4",
